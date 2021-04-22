@@ -1,0 +1,3 @@
+let favWord = "favorite";
+let favRegex = /favou?rite/; // Huruf u apakah ada atau tidak
+let result = favRegex.test(favWord);

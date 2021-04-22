@@ -1,0 +1,3 @@
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/ig; // range [] alphabet h sampai s dan 2 sampai 6
+let result = quoteSample.match(myRegex); // Change this line

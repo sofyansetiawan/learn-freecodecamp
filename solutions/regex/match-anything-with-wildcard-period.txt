@@ -1,0 +1,3 @@
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/; // wildcard kalau dot (.) yang penting mengandung di depan atau di belakang dot dan dot mengabaikan text lainnya
+let result = unRegex.test(exampleStr);

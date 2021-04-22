@@ -1,0 +1,3 @@
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; // Change this line
+let result = extractStr.match(codingRegex); // KEBALIKAN: kalau test() string jadi value argument, match regex sebagai argument dari method. MATCH tidak mengembalikan boolean tapi array dan ada prop objectnya

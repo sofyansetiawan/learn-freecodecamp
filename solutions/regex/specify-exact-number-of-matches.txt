@@ -1,0 +1,3 @@
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // Harus 4 m bukan minimal atau maksimal
+let result = timRegex.test(timStr);

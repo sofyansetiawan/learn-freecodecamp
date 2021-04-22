@@ -1,0 +1,3 @@
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6}\sno/gi; // karaketer terakhir sebelum range {} dihitung berapa. Whitespace dihilangkan, global dan incase-sensitive
+let result = ohRegex.test(ohStr);

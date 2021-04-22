@@ -1,0 +1,70 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background: rgba(58, 58, 158, 0.8);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+    width: 720px;
+    margin: 70px auto;
+}
+
+#survey-form {
+    background: rgba(27, 27, 50, 0.8);
+    color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.form-input {
+    margin-bottom: 20px;
+}
+
+.form-input label {
+    display: block;
+    line-height: 2.0;
+}
+
+.form-input input[type=text], .form-input input[type=number], .form-input input[type=email], .form-input select, .form-input textarea{
+    font-size: 16px;
+    padding: 5px 15px;
+    width: 100%;
+    border: 2px solid #673ab7;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#title {
+    font-weight: 400;
+}
+
+#description {
+    font-weight: 100;
+}
+
+#title,
+#description {
+    color: #fff;
+    text-align: center;
+}
+
+#submit{
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 800;
+    background: #4caf50;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+}

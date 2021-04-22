@@ -1,0 +1,15 @@
+function confirmEnding(str, target) {
+  let reversedStr = str.split("").reverse().join("")
+  let reversedTarget = target.split("").reverse().join("")
+  let reversedTargetLen = reversedTarget.length;
+  let status = true;
+  for(let i = 0; i < reversedTargetLen; i++){
+    if(reversedTarget[i] != reversedStr[i]){
+      status = false
+    }
+  }
+  return status;
+
+}
+
+confirmEnding("Bastian", "n");

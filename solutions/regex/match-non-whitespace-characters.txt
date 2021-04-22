@@ -1,0 +1,3 @@
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; // Kebalikan dari s kecil, tidak ada whitespace
+let result = sample.match(countNonWhiteSpace);

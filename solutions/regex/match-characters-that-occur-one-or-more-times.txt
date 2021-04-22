@@ -1,0 +1,4 @@
+let difficultSpelling = "Mississippi";
+let myRegex = /ss+/g; // + adalah kemunculan 1 atau potensi lebih secara beurutan. Misal s, ss, sss, ssss
+let result = difficultSpelling.match(myRegex);
+console.log(result)

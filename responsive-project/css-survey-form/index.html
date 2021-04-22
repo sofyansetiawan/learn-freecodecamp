@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website form Survey Form by Sofyan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <h1 id="title">My Survey Form by Sofyan</h1>
+        <p id="description">This is the survey form for one of my data analytic requirements</p>
+        <form id="survey-form" action="" method="POST">
+            <div class="form-input">
+                <label id="name-label">Name</label>
+                <input type="text" id="name" name="name" placeholder="enter your name" required>
+            </div>
+            <div class="form-input">
+                <label id="email-label">Email</label>
+                <input type="email" id="email" name="email" placeholder="enter your email" required>
+            </div>
+            <div class="form-input">
+                <label id="number-label">Age</label>
+                <input type="number" id="number" name="age" placeholder="enter your age" min="1" max="60">
+            </div>
+            <div class="form-input">
+                <label>Which option best describes your current role?</label>
+                <select id="dropdown">
+                    <option value="">Select current role</option>
+                    <option value="student">Student</option>
+                    <option value="fulltimejob">Fulltime Job</option>
+                    <option value="fulltimelearner">Fulltime Learner</option>
+                    <option value="prefer">Prefer not to say</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-input">
+                <label>Would you recommend freeCodeCamp to a friend?</label>
+                <input type="radio" name="recommend" value="definitly"> Definitly<br>
+                <input type="radio" name="recommend" value="maybe"> Maybe<br>
+                <input type="radio" name="recommend" value="notsure"> Not Sure<br>
+            </div>
+            <div class="form-input">
+                <label>What is your favorite feature of freeCodeCamp?</label>
+                <select id="dropdown2">
+                    <option value="student">Select an option</option>
+                    <option value="fulltimejob">Fulltime Job</option>
+                    <option value="fulltimelearner">Fulltime Learner</option>
+                    <option value="prefer">Prefer not to say</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-input">
+                <label>What would you like to see improved? (Check all that apply)</label>
+                <input type="checkbox" name="improved" value="fe"> Front-end Projects<br>
+                <input type="checkbox" name="improved" value="be"> Back-end Projects<br>
+                <input type="checkbox" name="improved" value="dv"> Data Visualization<br>
+                <input type="checkbox" name="improved" value="ch"> Challenges<br>
+                <input type="checkbox" name="improved" value="oo"> Open Source Community<br>
+                <input type="checkbox" name="improved" value="gh"> Gitter help rooms<br>
+                <input type="checkbox" name="improved" value="vd"> Videos<br>
+                <input type="checkbox" name="improved" value="cm"> City Meetups<br>
+                <input type="checkbox" name="improved" value="wk"> Wiki<br>
+                <input type="checkbox" name="improved" value="fr"> Forum<br>
+                <input type="checkbox" name="improved" value="ac"> Additional Courses<br>
+            </div>
+            <div class="form-input">
+                <label>Any comments or suggestions?</label>
+                <textarea cols="40" rows="5" name="comment" placeholder="enter your comments here.."></textarea>
+            </div>
+            <div class="form-input">
+                <input id="submit" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

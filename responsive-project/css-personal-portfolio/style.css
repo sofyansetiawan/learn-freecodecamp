@@ -1,0 +1,197 @@
+@media only screen and (max-width: 720px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* i use gradient css generator */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#373d4d+0,242b3c+100 */
+background: #373d4d; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #373d4d 0%, #242b3c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #373d4d 0%,#242b3c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  #373d4d 0%,#242b3c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373d4d', endColorstr='#242b3c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+#welcome-section h1 {
+    color: #fff;
+    text-shadow: 2px 2px 0 #333;
+    font-size: 50px;
+    margin: 5px;
+}
+
+#welcome-section p {
+    margin: 0;
+    color: #be3144;
+    font-size: 30px;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background: #be3144;
+    padding: 0 20px;
+    box-shadow: 2px 2px 10px -5px;
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+
+#navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    padding: 20px;
+}
+
+#navbar ul li a:hover {
+    background: #607d8b;
+}
+
+#projects {
+    padding: 50px 20px;
+    background: #673ab7;
+}
+
+#projects h2{
+    text-align: center;
+    border-bottom: 1px solid;
+    color: #fff;
+    padding-bottom: 10px;
+    display: block;
+    width: 400px;
+    margin: 10px auto;
+}
+
+#project-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin: 40px auto;
+}
+
+.project-tile{
+    background: #310a75;
+    box-shadow: 2px 2px 5px -2px;
+}
+
+.project-tile a{
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.project-tile a i{
+    visibility: hidden;
+}
+
+.project-tile a:hover i{
+    visibility: visible;
+    color: #ccc;
+}
+
+.project-tile img{
+    width: 100%;
+}
+
+#projects a#showall{
+    display: block;
+    width: 140px;
+    margin: 0 auto;
+    background: #310a75;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    font-weight: 800;
+}
+
+#projects a#showall:hover{
+    background: #be3144;
+}
+
+.contact-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+    padding: 0 60px;
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#373d4d+0,242b3c+100 */
+background: #373d4d; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #373d4d 0%, #242b3c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #373d4d 0%,#242b3c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  #373d4d 0%,#242b3c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373d4d', endColorstr='#242b3c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+color: #fff;
+}
+
+.contact-me h2{
+    font-size: 50px;
+    margin: 10px 0;
+}
+
+.contact-me p{
+    font-size: 20px;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.contact-me .link{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-me .link a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    padding: 0 30px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background: #673bb7;
+    color: #fff;
+    font-weight: 800;
+}

@@ -1,0 +1,3 @@
+let haStr = "Hazzzzah";
+let haRegex = /haz{4,}ah/ig; // Minimal 4 z dan perlu ditambahi pembuka dan penutup
+let result = haRegex.test(haStr);

@@ -1,0 +1,3 @@
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g; // shortcut alphanumeric a-z1-9_ (underscore) + secara global
+let result = quoteSample.match(alphabetRegexV2).length;

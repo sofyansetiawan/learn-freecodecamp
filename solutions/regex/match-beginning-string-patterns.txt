@@ -1,0 +1,3 @@
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // ^ = bukan negasi tanpa grup atau, tapi lansung first letter / beginning apakah sesuai
+let result = calRegex.test(rickyAndCal);

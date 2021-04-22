@@ -1,0 +1,3 @@
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // $ di belakang artinya end sesuai atau tidak
+let result = lastRegex.test(caboose);

@@ -1,0 +1,5 @@
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
+let replaceText = "$3 $2 $1"; // urutan berbeda karena $ mewakili urutan
+let result = str.replace(fixRegex, replaceText);
+console.log(result)

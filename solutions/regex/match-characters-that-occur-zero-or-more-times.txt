@@ -1,0 +1,7 @@
+// Only change code below this line
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+let chewieRegex = /Aa*/; // * adalah kalau potensi muncul lebih dari 1 kali. 0 atau lebih (kalau + 1 atau lebih)
+// Only change code above this line
+
+let result = chewieQuote.match(chewieRegex);
+console.log(result);

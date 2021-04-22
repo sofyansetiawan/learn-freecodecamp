@@ -1,0 +1,3 @@
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g; // Kebalikan dari d kecil. Bukan number.
+let result = movieName.match(noNumRegex).length;

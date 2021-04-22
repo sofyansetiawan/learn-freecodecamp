@@ -1,0 +1,4 @@
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aiueo]/gi; // Di dalam square [] adalah karakter-karakter yang opsional hanya salah 1. Misal /b[aiueo]g/gi -> big, bug, bag. Kalau . (dot) fixed, kalau [] dinamis
+let result = quoteSample.match(vowelRegex); // Change this line
+console.log(result)

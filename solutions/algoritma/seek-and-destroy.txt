@@ -1,0 +1,24 @@
+function destroyer(arr, ...num) {
+  for(let i = 0; i < num.length; i++){
+    let status = true
+    while(status){
+      status = false;    
+      for(let j = 0; j < arr.length; j++){
+        if(arr[j] === num[i]){
+          arr.splice(j, 1)
+          status = true
+        }
+      }
+    }
+  }
+  console.log(arr)
+  return arr;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+// i = 
+// j = 
+// newArr = []
+// num[i] = 
+// arr[j] = 

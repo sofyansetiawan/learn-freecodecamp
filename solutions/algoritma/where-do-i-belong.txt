@@ -1,0 +1,28 @@
+function getIndexToIns(arr, num) {
+  let status = true
+  while(status){
+      status = false
+      for(let i = 1; i < arr.length; i++){
+        if(arr[i-1] > arr[i]){
+          let temp = arr[i]
+          arr[i] = arr[i-1]
+          arr[i-1] = temp
+          status = true
+        }
+      }
+    }
+  let index = 0;
+  for(let i = 0; i < arr.length; i++){
+    if(num <= arr[i]){
+      index = i
+      break
+    }
+    else{
+      index = i+1
+    }
+  }
+  
+  return index;
+}
+
+getIndexToIns([10,21,3,4,5,6], 5);
