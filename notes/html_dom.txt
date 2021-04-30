@@ -1,0 +1,43 @@
+- Gunakan Max-width untuk image <img src="img_girl.jpg" style="max-width:100%;height:auto;">
+
+- Mengganti px dengan vw unit untuk text agar responsive
+
+- Menerapkan HTML Layout Elements seperti section, aside dll
+
+- border:0; is added to prevent IE9 (and earlier) from displaying a border around the image (when the image is a link).
+
+- Menambahkan alt="Flowers in Chania" di setiap image
+
+- Setiap image harus mempunyai width dan height baik css atau attr
+
+- Menggunakan <picture> element to add more flexibility when specifying image resources (untuk responsive)
+
+- Memanfaatkan Block level elements in HTML
+
+- Memanfaatkan kondisi Noscript Hack sebagai Alternate Content <noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+- Membedakan HTML File Paths
+
+- Menggunakan tag <BASE> untuk semua URL
+
+- Pelajari meta name="viewport"
+
+- Document Object Model (DOM)
+
+- Antarmuka pemrograman untuk dokumen HTML dan XML (juga SVG) terkait
+
+- Mengetahui dan mengatur struktur representasi dokumen melalui JavaScript. 
+
+- Program dapat mengolah struktur, style, dan isi dari dokumen tersebut. 
+
+- Kombinasi interaksi antarmuka antara DOM dan JavaScript ini juga dapat dilakukan karena adanya Application Programming Interface (API). 
+
+- API memungkinkan sebuah program berkomunikasi dengan program yang lain dengan cara tertentu. 
+
+- Dengan API, bahasa selain JavaScript seperti Python dan Ruby jadi bisa juga mengakses dokumen HTML dan XML. 
+
+- DOM API di HTML umumnya adalah untuk node ataupun objek element, document, dan window. 
+
+- DOM punya property (nilai) dan method (aksi) dan event handler
+
+- Node parent, child dan sibling

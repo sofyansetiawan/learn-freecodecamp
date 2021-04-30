@@ -1,0 +1,174 @@
+- Hoisting artinya mengangkat. JavaScript hoisting is when variables are hoisted (lifted) to the top of their containing scope.
+
+- let (variabel yang cuma bisa diakses, tidak bisa diinisiasi ulang (hanya bisa declare sekali), hidup dalam block tertentu bisa di level global, function atau kondisi if, atau looping for selama kurung kurawal {} diluar block itu maka undefined / stay inside blok) 
+
+- let (jika ada 2 let atau lebih dengan blok yang berbeda atau di level berbeda / parent berbeda, maka akan dianggap 2 variabel berbeda. Jika ada 2 let diinisialisasi dalam 1 blok maka akan error). you might accidentally overwrite a variable that you did not intend to overwrite
+
+- let sangat berguna saat initialization loop for (let i = 0; i < 5; i++) jika di luar loop maka akan undefined. Beda block bisa bisa beda let nama sama.
+
+- const (variabel yang hanya read-only, bisa di panggil tapi tidak bisa di ubah nilainya. Seperti DEFINE di PHP)
+
+- const (lebih baik const dibuat uppercase misal: "site_link" jadi "SITE_LINK")
+
+- let masih mempengaruhi child di dalam block nya
+
+- const dan let bisa menampung ARRAY
+
+- Objek (termasuk array dan fungsi) yang assign ke variabel menggunakan const masih bisa berubah. Menggunakan deklarasi const hanya mencegah penugasan kembali pengenal variabel. Mutate array (const arr = [90]; arr[1] = 50 //bisa tapi arr = [1,2,3] // tidak bisa )
+
+- Mencegah mutasi object pakai Object.freeze(obj);
+
+- fat arrow function : var ambilNama = () => { //code code } untuk memperingkas penulisan dengan menghapus keyword function. Di dalam kurung bisa dimasukkan argument, tapi jika kosong harus tetap ditulis ()
+
+- fat arrow function : jika hanya 1 baris var ambilNama = () => console.log("HELLO") dan bisa jika cukup tulis isinya "Hello" untuk melakukan return value
+
+- fat arrow function : var data = (a, b) => a + b (jika ada parameter yang tidak dipass tp diisi di pemanggilan function, maka akan di abaikan)
+
+- fat arrow function : jika hanya 1 argumen var data = a => console.log(a)
+
+- fat arrow function : dapat di pass sebagai argument function lain setTimeout(a => a + 5 , 1000) atau setTimeout( () => console.log("HALO") , 1000 )
+
+- jika kita melakukan console.log(this) maka akan print semua window object (global context). Jika kita menambahkan event listener ke button untuk memanggil function console.log this maka akan print semua object button (refers to object yang memanggil)
+
+- fat arrow function : tetap membuat keyword this tetap refers to window (global scope)
+
+- default parameter : bisa menambahkan parameter yang berisi yang belum tentu di pass value nya bisa di override dengan menambahkan value. function nama (depan, belakang = "setiawan") { console.log("Depan: "+depan+", Belakang: " + belakang) } nama("sofyan")
+
+- default paratemer : parameter bisa melakukan perhitungan dan menggunakan nilai dari parameter lain dan dapat menggunakan variabel luar yang langsung akses ke deklarasi parameter function . function jumlah (angka1, angka2 = angka1 / 2) {return angkat1 + angka2 }
+
+- Rest Parameter : (...args) sebagai array args.length; . Diletakkan sebagai parameter di declare function
+
+- Spread Operator -> (...arr) returns an unpacked array, spread array. Diletakkan sebagai argument saat pemanggilan function.
+Operator spread hanya bekerja di tempat, seperti dalam argumen ke fungsi atau dalam literal array, seperti dalam argumen ke fungsi atau dalam literal array.
+arr2 = [...arr1]; atau arr = [1,2,3]; namaFunction(...arr);
+
+- Object literal = javascript object value propertinya mengambil dari variabel luar. cukup memanggil nama variabel luar maka value variabel akan jadi value dari propertinya object
+`const getMousePosition = (x, y) => ({
+  x: x,
+  y: y
+});
+const getMousePosition = (x, y) => ({ x, y });`
+
+- Object literal = this akan merefer ke properti object. Menulis properti function seperti "fungsi"(){} lalu di panggil `object["fungsi"]()`
+
+- Object literal = pass nama property object dari value dari variabel luar let nama = "rumah"; var obj = { [nama]: "nilainya"; }
+
+- Rest parameter : untuk menggunakan jumlah parameter yang dinamis bisa memasukkan parameter dengan jumlah berapapun dan dijadikan array. dengan function nama(...args) {} nama(10, 20, 30)
+
+- Spread parameter: seperti rest tapi beda perlakuan dipanggil di function sebuah array lalu looping sendiri seperti jika Math.max(...angkas)
+
+- For Of Loop seperti halnya for in loop di Python
+
+- Template literals : var kalimat = ``ini adalah ${name + "alias"} setiawan``
+
+- Template literal tidak bisa atau tidak perlu menggunakan concantenate expression misal + - / * di dalam string literal
+
+- Destructuring Assignment to Extract Values from Objects : meng-assign object ke variable {} otomatis akan membuat variabel berdasarkan nama properti di object. Harus menggunakan variabel sesuai nama properti.
+`const user = { name: 'John Doe', age: 34 };
+const { name, age } = user; // name = 'John Doe', age = 34` 
+
+- Destructuring Assignment to Assign Variables from Objects : meng-assign ke variabel {} akan mengakses properti lalu membuat variabel baru yang bisa berbeda dengan nama properti. Syntaxnya {properti1: variabel1, properti2: variabel2}
+
+- Jika nested object : const { johnDoe: { age, email }} = user;
+const { johnDoe: { age: userAge, email: userEmail }} = user;
+
+- Destructuring Assignment from Array
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c); // 1, 2, 5
+[a, b] = [b, a] // swap nilai
+
+- Kita bisa memanggil sisa destructuring dengan rest operator untuk memisahkan nilai array
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+console.log(a, b); // 1, 2
+console.log(arr); // [3, 4, 5, 7]
+
+- Destructuring Object di parameter:
+const half = (stats) => (stats.max + stats.min) / 2.0;
+const half = ({max, min}) => (max + min) / 2.0;
+
+- Declarative Functions di dalam method object tidak perlu menulis keyword function lagi
+
+- Membuat object menggunakan keyword constructur dari class dan menggunakan new. Memanggil class lalu menjalankan proses di constructor. Menggunakan UpperCase (tidak boleh menggunakan lowercase)
+
+var SpaceShuttle = function(targetPlanet){
+  this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+
+///
+
+class SpaceShuttle {
+  constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+  }
+}
+const zeus = new SpaceShuttle('Jupiter');
+
+- Getter (untuk mendapatkan nilai) dan Setter (untuk mengatur/set nilai object) variabel private tanpa meng langsung
+get namagetter() dan set namasetter(). Getters dan setter penting karena menyembunyikan detail implementasi internal. Penulisan variabel private bisa menggunakan awakan prefix underscore _
+
+- Module memudahkan cara agar berbagi code antar file javascript. Ini melibatkan mengekspor bagian dari file untuk digunakan dalam satu atau lebih file lainnya, dan mengimpor bagian yang Anda butuhkan, di mana Anda membutuhkannya. Script yang menggunakan module bisa melakukan import dan export. Digunakan di HTML
+
+<script type="module" src="filename.js"></script>
+
+- Export bisa membagi fungsi-fungsi terkelompok/termodule yang diinginkan agar bisa dipakai oleh file javascript lain. Saat Anda mengekspor variabel atau fungsi, Anda dapat mengimpornya di file lain dan menggunakannya tanpa harus menulis ulang kode. Anda dapat mengekspor banyak hal dengan mengulangi contoh pertama untuk setiap hal yang ingin Anda ekspor, atau dengan menempatkan semuanya dalam pernyataan ekspor. Bisa pakai cara single atau cara multiple
+
+export const add = (x, y) => {
+  return x + y;
+}
+///
+const add = (x, y) => {
+  return x + y;
+}
+
+export { add, subtract };
+
+- Import module dari file external untuk di load di pengimport. Tapi module itu harus sudah di export oleh file tersebut. Kamu bisa memilih fungsi mana yang akan kamu gunakan dan mengabaikan lainnya. Atau gunakan * untuk import semua tapi menggunakan alias as sebagai object
+
+import { add, subtract } from './math_functions.js';
+import * as myMathModule from "./math_functions.js";
+
+- Import bisa menggunakan alias lain dari masing masing function
+import { MyComponent2 as MyNewComponent } from "./MyComponent";
+
+- Default export. Hanya ada 1 default export di dalam file. Untuk mengekspor single class, function atau primitive. Tidak punya nama fungsi.
+
+- Import default. Bisa menggunakan nama apa saja dan mewakili apapun yang default export. Tidak diapit oleh curly-bracket
+
+export default function() { console.log("hello!") }
+
+import foo from "foo";
+foo(); // hello!
+
+// import
+import MyDefaultComponent from "./MyDefaultExport";
+// export
+const MyComponent = () => {}
+export default MyComponent;
+
+- Promise : untuk membuat janji untuk melakukan sesuatu, asyncronous. Ketika tugas selesai, memenuhi janji atau tidak melaksanakannya. Promise adalah fungsi constructor, jadi membuat keyword new. harus ada function sebagai eksekutor dengan 2 argumen : resolve dan reject. 
+
+const myPromise = new Promise((resolve, reject) => {
+
+});
+
+- Promise punya 3 state atau keadaan: pending, fulfilled dan rejected. Promise yang tidak menuju ke cara penyelesaikan maka akan pending terus. Parameter resolve agar promise dianggap sukses, rejected agar promise dianggap failed. 
+
+const myPromise = new Promise((resolve, reject) => {
+  if(condition here) {
+    resolve("Promise was fulfilled");
+  } else {
+    reject("Promise was rejected");
+  }
+});
+
+- Then dijalankan ketika proses promises terpenuhi. Ketika kondisi fulfilled / resolve. Terdapat argument result yang dipassing
+
+- Catch dijalankan ketika proses gagal. Ketika kondisi rejected / reject. Terdapat argument error yang dipassing
+
+myPromise.then(result => {
+  // do something with the result.
+});
+myPromise.catch(error => {
+  // do something with the error.
+});

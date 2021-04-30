@@ -1,0 +1,68 @@
+- Regex digunakan untuk mencari kecocokan pola di string
+
+- Match literal patterns: Untuk mencari sebuah kata di dalam string misal "in the end" bisa pakai /the/ untuk mencari kata the. Petik tidak dibutuhkan dalam regex. 
+
+- Mencari pola regex .test() akan mengembalikan true atau false
+
+- Cara diatas case-sensitive
+
+- Jika ingin ada opsi mencari pola dengan salah satu kecocokan /yes|no|maybe/ . | adalah OR jadi jika bertemu salah satu maka benar.
+
+- Flag digunakan untuk memasukkan parameter operasi tertentu ( /i )setelah literal string regex. Misal: /sofyan/i . Bisa multiple /sofyan/ig
+
+- Agar bisa tidak case-sensitive bisa menggunakan ignore case. Syntax: /ignorecase/i
+
+- Mencari pola regex .match() akan mengembalikan array berisi stringnya dan indexnya
+
+- Jika match() menggunakan flag g (global) maka akan bisa multiple, Jika tidak maka cuma mendapatkan first. /Repeat/ --> ["Repeat"]. /Repeat/g --> ["Repeat", "Repeat", "Repeat"]
+
+- Wildcard character: . (dot or period) setelah keyword untuk mencari kata di dalam string yang mengandung keyword tersebut. Misal : /hu./ untuk maka akan mendapatkan "hum", "huh", "hut"
+
+- Character classes: mencari pola jika terdapat salah satu karakter dari grup karakter di dalam square bracket [] bersifat OR. Jika /b[aiu]g/ maka big, bug, bug masuk. Jika bog maka akan bernilai null.
+
+- Character sets: mendapatkan range karakter menggunakan hypen. Misal: [a-e] berarti a, b, c, d, e. Misal /b[a-e]c/ maka ditemukan bac, bbc, bcc, bdc, bec. Jika tidak temu maka akan bernilai null.
+
+- Jika menggunakan [0-9] mendapatkan range 0-9 jika ingin alphanumeric [a-z0-9]
+
+- Negasi: menggunakan ^ seperti NOT diletakkan di setelah opening bracket. Sebaliknya akan mencari karakter yang bukan karakter-karakter tersebut. Misalnya /[^aiueo]/gi. 
+
+- In Row: menggunakan operator + mengulang 1 setelah yang lain dalam satu baris dan tidak diselingi/skip karakter lain. Jika abc di /a+/g maka akan keluar ['a'] jika aabc maka ['aa']. Jika abab maka keluar ['a']. Jika /s+/g Mississippi maka ['ss', 'ss']
+
+- Ada juga opsi yang mencocokkan karakter yang muncul berkali-kali atau lebih. Karakter untuk melakukan ini adalah tanda bintang atau bintang: *.
+
+    let soccerWord = "gooooooooal!";
+    biarkan gPhrase = "firasat";
+    biarkan oPhrase = "melewati bulan";
+    biarkan goRegex = / go * /;
+    soccerWord.match (goRegex);
+    gPhrase.match (goRegex);
+    oPhrase.match (goRegex);
+
+    In order, the three match calls would return the values ["goooooooo"], ["g"], and null.
+
+- ? lazy matching regex (diluar pencarian)
+
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

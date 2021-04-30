@@ -1,0 +1,156 @@
+Git adalah version control system yang digunakan para developer untuk mengembangkan software secara bersama-bersama
+
+GIT revisi analoginya seperti revisi skripsi tapi bersama sama . Seperti google docs. Tapi git lebih cocok untuk hal kompleks seperti kode
+
+————————————————————————
+
+(Membuat analogi git dan menggambar prosesnya di papan) + sampai saat ini masih belum ada mekanisme yang mengalahkan git
+
+Dengan GIT maka kamu bisa ngerjain dimana saja, gak perlu kirim kiriman kode antar programmer
+
+Kalau misal ada yang mengirim kode error, semua tim bakal error
+
+Hosting kode di Github, Gitlab, Bitbucket, dll
+
+Github sebagai portfolio
+
+(Coba membuat repository dan demo menggunakan terminal git)
+
+————————————————————————
+
+Buka git-scm.com lalu download dan install
+
+Cek git
+
+git --version
+
+Untuk lokasi instalasi —> 
+
+which git
+
+Configurasi git
+
+	git config --global user.name “Sofyan Setiawan” 
+	git config --global user.email “sofyansetiawannn@gmail.com"
+	git config —list
+	git config —help
+
+Membuat Folder kosong untuk project git
+
+	cd ~/Desktop
+	mkdir myproject
+	cd myproject/
+
+Ke lokasi folder kosong sebagai lokasi project, untuk inisialisasi folder untuk git —> 
+
+	git init .
+	atau git init /var/www/html/proyekweb
+
+Menghapus tracking git di folder project agar jadi folder biasa
+
+	rm -rf .git
+
+Buat file baru —> index.html
+
+	touch index.html 
+	ls 
+	code .
+
+Edit isi file index.html
+
+Melihat status file apakah staged atau unstaged —> 
+
+	git status
+	git add <filename>
+	git add . (untuk all files and folder)
+	git add -A (untuk files and folder)
+	git status (mendapatkan status apakah sudah staged atau belum)
+
+Jika ingin membatalkan file file di staging area atau undo bisa pakai
+
+	git reset namafile.txt
+	git reset
+
+Git commit itu seperti paket perubahan yang akan dikirim. Analogi staged, unstaged
+
+	git commit -m "This is my first commit!”
+
+Membuat Akun di Github (Buka phase 0 den) lalu membuat repository baru
+
+	echo "# test-repo" >> README.md
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin https://github.com/sofyansetiawan/test-repo.git
+	git push -u origin master
+
+	git remote add origin https://github.com/cubeton/mynewrepository.git
+
+Mengirim paket perubahan ke server github
+
+	git push -u origin master
+
+Tambahkan Readme.md untuk menambahkan dokumentasi dan informasi tentang project
+
+Lalu di tarik perubahannya
+
+	git pull
+
+Git Clone project di folder berbeda, Bikin repo yang berbeda
+
+	cd ke folder luar
+	git clone https://github.com/sofyansetiawan/mcc-test-2.git
+
+Untuk ignore beberapa file bisa menggunakan
+
+	touch .gitignore
+	Ketikkan nama file atau directory per baris (atau semua tipe file *.txt)
+
+Untuk melihat perubahan file ketika belum staged bisa menggunakan
+
+	git diff
+
+————————————————————————-
+
+Collaborator
+
+Git cheatsheet
+
+Github ada tool nya yaitu Github Desktop, Sourcetree, Gitkraken, dll (di server tidak menggunakan client)
+
+—————————————————————————
+
+GIT BRANCH
+—————— 
+
+Buatlah branch baru dengan menjalankan perintah berikut:
+
+	git checkout -b <nama branch>
+	Contoh: git checkout -b versi-2
+
+Check terlebih dahulu apakah kamu sudah masuk ke branch baru dengan memasukkan perintah berikut:
+
+	git status
+
+Berpindah antar branch : 
+
+	git checkout <nama branch>
+
+Yang akan menampilkan output seperti ini:
+
+	On branch <nama branch>
+	nothing to commit, working tree clean
+
+Jalankan perintah untuk melakukan push ke branch kamu
+
+	git push origin <nama branch>
+
+Fork
+
+Git Clone Project lalu buat branch
+
+Lakukan Pull Request dari halaman repository yang di clone dengan cara klik tombol Compare & pull request 
+
+Tambahkan message dan klik button Create pull request
+
+## Pakai terminal zsh agar kamu tau branch yang kamu gunakan

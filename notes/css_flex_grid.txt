@@ -1,0 +1,136 @@
+## START: FLEX:
+
+Flex diletakkan di Container Div / parent (untuk menghindari float)
+
+display:flex;
+
+flex-direction: row-reverse / column-reverse / column / row (mengubah direction urutan dibalik menjadi row atau column)
+
+justify-content: flex-start / flex-end / center / space-between / space-around; (mengatur align item proporsional secara horizontal untuk row dan vertical untuk kolom dalam mengisi container secara fleksibel)
+
+align-items: kebalikan dari justify-content
+
+flex-wrap: tidak fit semua items menjadi 1 baris untuk wrap atau tidak ketika melebihi 100% maka akan turun kebawah
+
+flex-shrink: diletakkan di child dari container flex dengan nilai porsi 1, 2, 3 dll shrink ketika container width nya kurang dari kombinasi width child nya
+
+flex-grow: kebalikan dari flex-shrink (tidak perlu pakai width)
+
+flex-basis: pakai em / px dll 
+
+shorthand -> flex:  flex-grow flex-shrink flex-basis; flex: 1 1 150px;
+
+order: untuk menentukan urutan div dari child container flex; order: 1;
+
+align-self: seperti align-items tp untuk individu/ masing-masing child
+
+------------
+## START GRID
+
+DI PARENT -->
+
+display: grid (parent dianggap container, child dianggap item)
+
+grid-template-columns: 100px 100px;
+(maka akan ada 2 kolom bernilai 100px. Jumlah unit menunjukkan jumlah kolom dalam satu baris. Jika item melebihi jumlah kolom maka akan turun ke baris berikutnya)
+
+grid-template-rows: 50px 50px; (kebalikan dari grid-template-columns)
+grid-template-columns: repeat(2, 1fr 50px) 20px;
+
+grid-template-rows: repeat(100, 50px); (Untuk diulang ulang dengan ukuran tsb)
+
+grid-template-columns: 100px minmax(50px, 200px); (Seperti max-width dan min-width tapi nilai awalnya adalah ukuran inisialnya atau aslinya)
+
+grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); //  otomatis membuat jumlah div sesuai ukuran minmax untuk mengisi grid, ketika penuh atau tidak cukup akan turun ke bawah
+
+grid-template-columns: repeat( auto-fit, minmax(60px, 1fr)); // kebalikan dari auto-fill, auto-fit akan menyesuaikan ukuran kolom sampai mengisi kanan dan kiri baris, tidak akan yang turun ke bawah)
+
+grid template unit -> fr (misal 1fr, 2 fr sisa bagian dari kolom atau baris), % dan auto (sesuai konten)
+
+grid-column-gap: 10px; (menambahkan gap antar kolom seperti margin)
+
+grid-row-gap: 5px (menambahkan gap antar row seperti margin)
+
+grid-gap: 10px 20px; (kombinasi grid-column-gap dan grid-row-gap. pertama row, kedua column)
+
+justify-item: (seperti justify-self yang mengefek semua item child)
+
+align-items: (seperti justify-item tapi versi verticalnya)
+
+grid-template-areas: 'header header header header header header'
+  'menu main main main right right'
+  'menu footer footer footer footer footer'; 
+
+(menggunakan template penempatan posisi area masing-masing item semakin banyak nama template maka akan semakin banyak porsi tempat. Template harus proporsional jumlah row dan kolom, lalu apple grid-area: header di item) untuk kosong menggunakan titik ( . )
+
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss_grid-template-areas3
+
+
+DI ITEM -->
+
+grid-column: 1 / 3 (yang pertama adalah mulai dari posisi grid dan yang kedua berapa grid lebarnya)
+
+grid-row: 1 / 3 (kebalikan dari grid-column)
+
+justify-self: stretch, center, start, end (menyesuaikan secara horizontal lebar dan posisi terhadap container)
+
+align-item (seperti justify-self tapi vertical)
+
+grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
+
+grid-area: 'header'  '.'
+
+------------
+
+display: flexbox
+justify-content: space-around
+align-item: flex-start
+
+auto margin
+margin:auto
+
+gap: 1em
+flex-direction: column
+
+navigation bar
+card style layout
+
+display:grid
+grid-template-column: 5em 5em 5em
+grid-template-rows: 5em 5em
+
+grid auto sizing
+
+grid-template-column:repeat(3, 5em 2em)
+grid-template-column:repeat(auto-fill, minmax(200px, 1fr))
+- auto-fit
+
+content-based sizing
+grid-template-column:1fr, auto, minmax(200px, 400px)
+
+------
+
+Inspect Search Class CSS atau ID
+Filter Color properti
+Pick Color with Shift Button
+Inspect select right click then pick hover
+
+performance ada recalculate style, find efficience,
+console.log("i am", variabel)
+console.dir(variabel1, variabel2)
+console log bisa dimasukkan style
+
+debugger cukup mengetik di search part code
+bisa seleksi multiple column di debugger
+webpack minify
+
+di network timing recieving tergantung internet
+connecting tergantung DNS n CDN
+
+save json perfirmance test to compare
+
+animation inspector with bezier curve with click
+
+image clip path tool
+
+many tab tools in firefox

@@ -1,0 +1,87 @@
+- Variable = Assignment always goes from right to left. Everything to the right of the = operator is resolved before the value is assigned to the variable to the left of the operator.
+
+- Operasi matematik dari number bertemu dengan sesuatu yang undefined maka akan menjadi NaN, Jika "string" + number maka itu termasuk concatination tidak dianggap operasi matematik, jika operator matematik yang lain masih bisa. 
+
+- NaN terjadi jika 0 / 0 atau Infinity - Infinity
+
+- Nama variabel itu case-sensitive jadi jika ada nama variabel "var halo" maka akan berbeda dengan "var Halo"
+
+- Penulisan variabel dan nama function di JavaScript dalam styles camelCase
+
+- Remainder (sisa bagi) 17 % 2 != 0 (17 is Odd / ganjil) | 48 % 2 = 0 (48 is Even / genap)
+
+- Operator sisanya kadang-kadang salah disebut sebagai operator "modulus". (kompilasi positif sama)
+
+- Compound-Assignment (+= , -=, *=, dll) operasi matematika and assignment dalam satu step
+
+- Panjang string property misal var nama = "Sofyan Setiawan".length;
+
+- Mengakses masing-masing item di String dan Array menggunakan Bracket notation dan menggunakan Zero-based indexing
+
+- String values are immutable (tidak bisa diubah karakter[0]= "j" tp bisa ditimpa dengan value string baru)
+
+- Escaping Literal untuk Quotes bisa menggunakan backslash \" (saran menggunakan ES6)
+
+- Type Coercion (compare 2 data type beda) dipaksakan atau di maklumkan nilainya mengonversi kedua nilai yang dibandingkan dengan tipe umum, kecuali Strict Equality menggunakan === harus sama tipe data
+
+- Switch vs IF ( https://softwareengineering.stackexchange.com/questions/222145/if-statements-vs-switch-cases-in-a-javascript-game-and-if-to-use-a-function )
+
+/* - Switch untuk range 
+case 1: 
+case 2: 
+case 3: 
+    return "Low 1, 2, 3"; 
+    break;
+*/
+
+- Math.random() dapat mengembalikan 0 tetapi tidak pernah cukup mengembalikan 1
+
+- parseInt jika karakter pertama di string tidak bisa di parse maka akan NaN misalnya berisi bukan angka "James Bond". Value spasi masih dianggap bisa tp di escape. Mencegahnya var num = parseInt(s) || 0; . Argumen ke 2 parseInt(string, radix);  Radix untuk system bilangan lain, misal Hex .
+
+- Ternary condition ? statement-if-true : statement-if-false;
+
+- Array menambah unshift() dari depan, push() dari belakang | menghapus shift() dari depan, pop() dari belakang
+
+- Object seperti array tp aksesnya dengan properti bisa berisi function dan represent real world objects. Akses bisa menggunakan dot . atau bracket [] notation jika ada spasi atau nilai dinamis dari variabel
+
+- Object bisa berisi properties berupa function disebut method
+
+- var myDog = "Hunter"; var myBreed = dogs[myDog]; // dogs["Hunter"] bagus jika dari input
+
+- Function untuk reusable codes. Bagilah kode menjadi beberapa bagian yang dapat digunakan kembali
+
+- Ketika ada return maka proses berhenti dan kode dibawahnya tidak dijalankan. Ketika ada multiple return, hanya yg pertama yang di ambil dan proses berhenti
+
+- return akan mengambil hasilnya lalu mengembalikannya ke apa pun panggilan itu dan menghentikan proses apapun setelahnya atau menghentikan proses di function
+
+- Memanggil Function tanpa parenthesis menggunakan constructor. new namaFunction;
+
+- Ketika memanggil function tidak menggunakan parenthesis, maka dia tidak menggunakan argument. Bahkan tidak mengembalikan return undefined
+
+- Update nilai properti object seperti array dan variable ourDog.name = "Happy Camper"; Menambahkan properti ourDog.bark = "bow-wow"; Menghapus pakai delete ourDog.bark;
+
+- Test dan cek object myObj.hasOwnProperty("top"); // true false
+
+- data structure = contoh array yang berisi object di dalamnya berisi tipe tipe data primitive -> JSON 
+
+- Menggunakan "use strict"; (menangkap setiap error dan unsafe action)
+
+- Kegunaan Do While vs While dan Array vs Object???
+
+==================================
+
+// - Belajar menggunakan OOP = implements, interface, let, package, private, protected, public, static, and yield
+
+// - The map() method creates a new array with the results of calling a function for every array element. (masing-masing nilai array lama dipengaruhi fungsi)
+
+// - The reduce() method reduces the array to a single value. (masing-masing nilainya jadi 1 yang diiterasi dari function)
+
+// - The filter() method creates an array filled with all array elements that pass a test (provided as a function). (masing-masing nilai yang lolos fungsi)
+
+// - Rekursif adalah fungsi yang memanggil dirinya sendiri. Selalu ada perubahan di setiap pengulangan rekursif. Tipe datanya stack recursion. Setiap stack harus menuju hasil base case. Base case untuk menghentikan recursif
+
+// - Base case memberi tahu fungsi rekursif ketika tidak perlu lagi memanggil dirinya sendiri. Ini adalah kasus sederhana di mana nilai pengembalian sudah diketahui. Juga akan ada panggilan rekursif yang menjalankan fungsi asli dengan argumen yang berbeda. Jika fungsi ini ditulis dengan benar, pada akhirnya base case akan tercapai.
+
+// - https://addyosmani.com/blog/script-priorities/
+
+// -------------

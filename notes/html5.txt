@@ -1,0 +1,60 @@
+Metode-metode memasukkan hal multimedia ini juga disebut embedding
+
+-------------------
+
+hr digunakan untuk tanda pergantian topik atau memisahkan konten secara visual
+
+------------------
+
+Ukuran h1 - h6 menunjukkan level of importance of everything on the page
+
+---------------
+
+alt penting untuk screen readers / search engine mengubah jadi suara (muncul text jika image tidak ada) atau dari audio ke text. Alt kosongi ketika ada konten yang sudah menjelaskan secara explisit.
+
+-----------------
+
+Semantic meaning heading semakin ke bawah menunjukkan struktur hubungan hirarki (subbagian) diakali secara visual dengan font size. H1 sebagai subject konten halaman dan digunakan sebagian oleh mesin pencari untuk memahami topik halaman
+
+---------------
+
+Semantic element seperti div tp untuk menunjukkan type informasi agar tidak terlalu general dan memudahkan mencari awal dan akhir element better page summary or navigation options to their users.
+
+--------------
+
+<div> - groups content
+<section> - groups related content
+<article> - groups independent, self-contained content
+<header> untuk introductory information atau navigasi link yang dipanggil setiap page
+<nav> - untuk membungkus ul lu navigasi utama, kalau ada navigasi di footer cukup gunakan <footer>
+<figure> untuk konten tersendiri (self-contained contohnya sebuah ilustrasi, diagram, foto didalamnya ada <figcaption>
+
+-----------------
+
+fieldset and legend digunakan untuk grup komponen input seperti grup input informasi pribadi, kontak atau grup untuk radiobutton dan checkbox
+
+-----------------
+
+<time datetime="2013-02-13">last Wednesday</time> untuk standardize times bisa diakses assistive devices
+
+-----------------
+
+screen reader (chart dengan table) tapi tabel hanya ingin bisa dibaca screen reader membutuhkan elemen yang tidak tampil tapi tetap bisa dibaca misal menggunakan .sr-only . Screen reader akan ignore display: none; or visibility: hidden; dan width:0;height:0 (tanpa ukuran)
+
+------------------
+
+https://contrastchecker.com/ (The Web Content Accessibility Guidelines (WCAG)) recommended 4.5 to 1 This ranges from 1:1 for the same color, or no contrast, to 21:1 for white against black, the strongest contrast
+
+------------------
+
+Using Descriptive Link Text -- "information about batteries" instead of "Click here".
+
+------------------
+
+accesskey -- atribut navigasi shortcut untuk keyboard-user focus ke elemen tersebut (links, buttons, and form controls)
+
+tabindex -- dapat digunakan di elemen html umumnya link dan form control untuk mendapatkan keyboard focus 
+
+------------------
+
+ "retina" images gunakan 1/2 dari tinggi dan lebar dari file aslinya

@@ -1,0 +1,113 @@
+prioritas id akan mengalahkan class jika di apply ke element html
+
+------------------------
+
+Absolute dan Relative Unit
+
+em dengan nilai tertentu maka akan inherit nilainya dari parent
+rem sama dengan em tp inherit dari root misal (ukuran font)
+
+-------------------------
+
+CSS border, padding, margin menggunakan Clockwise Notation
+
+-------------------------
+
+CSS RBG punya peluang yang sama dengan Hex karena Hex 16 * 16 sama dengan 256
+
+--------------------------
+
+CSS Variable: (efeknya di element dimana inisialisasi dan menurun ke childnya)
+--penguin-skin: black;
+
+background: red;
+background: var(--penguin-skin);
+background: var(--penguin-skin, gray); fallback jika variable undefined / err 
+
+override css variable:
+:root{
+--bg: white;
+}
+.container{
+--bg: red;
+}
+
+--------------------
+
+box-shadow :offset-x offset-y blur-radius spread-radius color (blur dan spread optional) bisa multiple dipisahkan coma ( , )
+
+-------------------
+
+opacity : transparent untuk semua element di dalamnya
+background-color: rgba transparent untuk backgroundnya
+
+------------------
+
+CSS normal flow | relative berapa pixel dari current position masih di normal flow of the page
+
+---------------
+
+absolute diluar normal flow dengan relative, elemen disekitarnya mengabaikan space dan keberadaannya | chain detection default relative ke body (kecuali jika parentnya relative)
+
+fixed locked position di browser window bukan body
+
+---------------
+
+float untuk melawan / berlawanan / memaksa normal flow ,  biasanya ada width
+
+----------------
+
+z-index element terakhir akan paling depan
+
+---------------
+
+Complementary Colors - opposite wheel color misal RGB antara warna biru dan kuning
+
+---------------
+
+Tertiary colors - the result of combining a primary color with one of its secondary color neighbors
+
+---------------
+
+hsl() : H sangat memudahkan untuk mengubah warna (misal merah muda to biru muda) dengan proporsi tone yg sama , S mengubah tone warna dengan jenis warna yang sama (merah tua ke merah muda)
+
+Mengubah s dan l tanpa mengubah h, base warna sama tapi variasi
+
+--------------
+
+background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
+repeating-linear-gradient() menggunakan angle, warna dan ukuran stop
+background: repeating-linear-gradient(
+      90deg,
+      yellow 0px,
+      blue 40px,
+      green 40px,
+      red 80px
+    );
+
+--------------
+
+transform scale (hover button) , skew (digunakan untuk apa), rotate
+
+--------------
+
+box-shadow, ::after, ::before sebenarnya membuat shape
+::before dan ::after harus ada content minimal kosong '' tp diisi dimensi
+
+-------------
+
+css animation-name sepertinya memanggil nama instance movieclip , animation-duration (durasi movieclip) , @keyframes untuk nama movieclip di dalamnya ada 0% sampai 100% (bisa berisi keyframe lainnya untuk misal fadeIn fadeOut) tiap persen berisi properti yang diubah
+
+Jika tidak ada 0%, hanya ada 100% ditujukan untuk event, jadi sudah element yang sudah ada properti tersebut
+
+Bisa pakai second atau milimeter untuk durasinya, animation-iteration-count untuk menetukan berapa kali animasinya (1, 2, 3 atau infinite)
+
+Animation tidak perlu diapply pada pseudo-element before after
+
+animation-timing-function untuk membuat efek ease-in, ease-out atau linear dan cubic-bezier
+
+--------------
+
+Responsive typography (untuk font-size atau width) -- tidak menggunakan em or px tapi gunakan Viewport units seperti persen relative tapi beda dalam satuan (width or height). 4 unit: vw , vh , vmin, vmax
+
+Contoh -- font-size: calc(1.2em + 3vw);

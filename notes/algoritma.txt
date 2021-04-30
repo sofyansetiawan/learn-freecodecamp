@@ -1,0 +1,160 @@
+HACKTIV8 WEEK 2 ALGORITMA, PSEUDOCODE, DAN KONDISIONAL
+
+(Buka Slide)
+
+Pengertian Algoritma dengan analogi cara membuat mie (masakin mie donk.. bagi manusia paham tapi komputer harus satu persatu didefinisikan) , tata cara urutan dalam menyelesaikan masalah
+
+Programmer itu lebih ke problem solver, bukan hanya masalah kode (itulah kalau kita sudah bisa logic pemrograman, menguasai bahasa pemrograman/berpindah jadi lebih mudah)
+
+Di dunia komputer hanyalah data. Kita bisa menambahkan, mengubah dan membaca data
+
+JIKA NAFIES ADALAH MURID HACKTIV8 -> KALO IYA? KALO TIDAK?
+
+jika nafies adalah murid Hacktiv8 maka lanjutkan ke poin no 2. Jika bukan maka lanjutkan ke poin 3
+Betulkah Nafies berumur dibawah 25. Jika iya? maka lanjutkan ke poin? jika tidak ke poin no berapa?
+
+IF NAVIES IS a student THEN
+	IF NAFIES’S AGE < 25 years old THEN
+
+	END IF
+ELSE IF NAFIES IS A students of COMPANY P THEN
+		DISPLAY ’NAFIES STUDENT COMPANY P
+END IF
+
+————————————————
+
+ALGORITMA DAN PSEUDOCODE
+
+Perbedaan algoritma dan pseudocode
+
+Algoritma = kumpulan proses ataupun aturan untuk melakukan atau menyelesaikan sesuatu. Sesuatu ini biasanya berupa masalah atau kegiatan yang langkah-langkahnya pasti terbatas (tidak terus-menerus)
+
+Algoritma yang lebih bahasa manusia, dan pseudocode yang lebih bahasa komputer
+
+Analogi lainnya adalah seperti wikihow
+
+Pseudocode untuk setiap sebelum di coding itu sama (Pseudocode itu tahapan 1 persatu sampai komputer itu paham)
+
+Karena banyak bahasa pemrograman, logikanya sama tapi syntax berbeda
+
+—————————————————
+
+JAVASCRIPT
+
+Cara menjalankan javascript, bisa di browser, bisa di console chrome, terminal dengan node
+
+Statement and expression | Setiap unit kode yang dapat dievaluasi ke suatu nilai adalah expression, jika tidak maka statement adalah instruksi untuk melakukan tindakan tertentu. Tindakan tersebut termasuk membuat variabel atau fungsi, mengulang melalui berbagai elemen, mengevaluasi kode berdasarkan kondisi tertentu, dll
+
+https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74
+
+Value adalah set atau kumpulan data/bit yang merepresentasikan bagian dari informasi. Value perlu dilabeli denga nama agar bisa dipanggil dan tidak campur aduk
+
+Tipe data (String, Number, Boolean)
+
+String valuenya di apit double quotes, single quotes atau backtick
+
+Mengecek tipe data dengan unary operator typeof
+
+comparison operator
+
+logical operator
+
+Comparison operators — operators that compare values and return true or false. The operators include: >, <, >=, <=, ===, and !==.
+
+Logical operators — operators that combine multiple boolean expressions or values and provide a single boolean output. The operators include: &&, ||, and !.
+
+console.log()
+
+If - else if - else
+
+switch case
+
+switch case vs if else
+
+
+
+======================
+
+
+case sensitive + camelcase + cara menulis var
+
+Menulis variabel string, number, boolean dan null
+
+increase dan decrease di number javascript
+
+Menggunakan boolean di if
+
+—————————————— 
+else if
+
+if else lebih cocok untuk memeriksa boolean value dan conditional operator, kalau switch case untuk nilai yang jadi
+
+Misal kalau switch itu untuk memilih menu atau list
+
+———————————————
+
+concantenate di String
+
+var halo = “Sofyan”;
+var hola = “Setiawan;
+var olah = halo + “ , “ + hola
+
+compound assignment
+
+var kata = “Hello"
+kata += “WORLD”;
+
+var ourName = "freeCodeCamp";
+var ourStr = "Hello, our name is " + ourName + ", how are you?";
+
+var angka = 60;
+angka += 40;
+
+console.log(“Tulis teks “ + kata + “ di atas");
+
+——————————————
+
+comment = tidak menjalankan baris code atau untuk menulis keterangan dokumentasi
+
+single //
+
+multiple /* */
+
+——————————————
+
+mengakses abjad dalam string
+
+var kata2 = “HALO”
+
+console.log(kata2[0])
+
+kata2.length
+
+——————————————
+
+quote inside quote
+
+escaping literal
+
+\’ atau \”
+
+———————————————
+
+comparison operator:
+!== , ===, <=, >=
+
+logical operator:
+&& , ||
+
+———————————————
+
+undefined means a variable has been declared but has not yet been assigned a value. 
+
+On the other hand, null is an assignment value. 
+It can be assigned to a variable as a representation of no value. 
+Also, undefined and null are two distinct types: 
+undefined is a type itself (undefined) while null is an object.
+
+NaN not a number. Misal String atau 0 / 0 atau Infinity - Infinity
+
+Perbedaan Statement dan Expression : https://medium.com/launch-school/javascript-expressions-and-statements-4d32ac9c0e74
