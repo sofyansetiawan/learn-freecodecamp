@@ -22,6 +22,6 @@ const decAction = () => {
   return {
     type: DECREMENT
   }
-};; // Define an action creator for decrementing
+}; // Define an action creator for decrementing
 
 const store = Redux.createStore(counterReducer); // Define the Redux store here, passing in your reducers

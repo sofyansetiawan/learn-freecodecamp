@@ -1,0 +1,9 @@
+const JSX = <div>
+  <h1>Ini adalah header</h1>
+  <p>Ini adalah text</p>
+  <ul>
+    <li>Halo apa kabar</li>
+    <li>Halo apa kabar</li>
+    <li>Halo apa kabar</li>
+  </ul>
+</div>
