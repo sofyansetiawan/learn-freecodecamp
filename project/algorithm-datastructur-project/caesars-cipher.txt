@@ -1,0 +1,27 @@
+function rot13(str) {
+  let result = ""
+  for(let i = 0; i < str.length; i++){
+    let newChar = "";
+    for(let j = 97; j <= 122; j++){
+      let newCode = j + 13;
+      if(str[i].toLowerCase().charCodeAt() === j){
+        if(newCode > 122){
+          newCode = (newCode - 122) + 97;
+          newChar = String.fromCharCode(newCode-1).toUpperCase()
+        }
+        else{
+          newChar = String.fromCharCode(newCode).toUpperCase()
+        }
+      }
+    }
+    if(newChar){
+      result += newChar
+    }
+    else{
+      result += str[i]
+    }
+  }
+  return result;
+}
+
+rot13("SERR PBQR PNZC");

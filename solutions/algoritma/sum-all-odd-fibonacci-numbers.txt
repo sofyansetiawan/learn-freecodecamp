@@ -1,0 +1,15 @@
+function sumFibs(num) {
+  let sum = 0;
+  let prev = 0;
+  let next = 1;
+  while(next <= num){
+    if(next % 2 != 0){
+      sum += next;
+    }
+    next += prev;
+    prev = next - prev
+  }
+  return sum;
+}
+
+sumFibs(1000);

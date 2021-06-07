@@ -1,0 +1,24 @@
+{
+	"name": "fcc-learn-npm-package-json",
+	"author": "Sofyan Setiawan",
+	"description": "A project about learning NPM in API & Microservice by Freecodecamp",
+	"keywords": [
+		"nodejs",
+		"project",
+		"sofyansetiawan",
+		"freecodecamp"
+	],
+	"license": "MIT",
+	"version": "2.10.2",
+	"dependencies": {
+		"express": "^4.14.0"
+	},
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://idontknow/todo.git"
+	}
+}

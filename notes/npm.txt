@@ -1,0 +1,45 @@
+package.json pusat dari aplikasi node.js dan package yang dipakai. Menyimpan informasi project (seperti head di html).
+
+package.json harus minimal ada 2 field : name, version. Informasi lain perlu untuk pengguna lain dan maintenance
+
+author untuk menunjukkan developer yang membuat/memulai project. Bisa string atau object jika lebih dari 1 atau detailnya
+
+deskription digunakan untuk meringkas tentang aplikasi yang dibuat untuk apa dan menarik user untuk melanjutkan development, sell idea dan maintenance nanti (mengerti project ketika baca singkat deskripsi)
+
+keyword digunakan untuk memberikan kata kunci yang mudah untuk pencarian related project
+
+Lisence digunakan agar user yang menggunakan project tau batasan yang dilakukan. Umumnya menggunakan BSD atau MIT. Jika melanggar akan mendapat copyright 
+
+version digunakan untuk memberikan keterangan versi jika ada perubahan perubahan besar di project tersebut atau penambahan fitur baru
+
+dependencies digunakan untuk mendata package package yang akan di import ke dalam project (package bisa dependencies ke package lain yang tidak di import). Bisa berisi data package lebih dari 1, makanya ditampung ke dalam array of string. Ini adalah alasan utama kenapa menggunakan npm/package manager. Ketika install, maka npm akan menginstall otomatis dari data dependencies. Berisi properties nama package dan valuenya adalah versinya.
+
+version dari package di dependencies "namepackage":"version" mengikuti semantic versioning (semver). Library, fw dan tools yang akan dipakai banyak use harus menggunakan semver untuk mengetahui versi dan perubahan2
+
+version membantu untuk mengetahui history dari fitur sebelumnya jika di versi ini ada cacat/fitur tidak berfungsi (seperti git)
+
+rule version:
+    "paket":"MAJOR.MINOR.PATCH"
+MAJOR = bertambah saat perubahan API tidak kompatibel (fitur)
+MINOR = bertambah saat menambahkan fungsional
+PATCH = bertambah saat perbaikan bug
+
+Gunakan ~ untuk membuat fleksible mengenai jika ada perubahan patch dari dependencies (tidak strict di versi patch itu). Allow latest patch misal version 2.10.2 bisa menggunakan 2.10.x (x patch terbaru dari package)
+
+Seperti patch tapi mencakup minor dan patch. Misal version 2.10.2 bisa menggunakan 2.x.x
+
+Hapus package agar tidak digunakan dan tidak diinstall lagi (package.json adalah database pendataan package)
+
+    cari:
+    process.env.DISABLE_XORIGIN
+    req.headers.origin
+    res.setHeader
+    res.header
+    process.cwd()
+    express.static
+    __dirname
+    res.sendFile
+    res.type
+
+    .gitconfig
+    /node_modules/

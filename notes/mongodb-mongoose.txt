@@ -1,0 +1,119 @@
+Setup MongoDB Atlas https://www.freecodecamp.org/news/get-started-with-mongodb-atlas/
+
+MongoDB Atlas diinstall dan package untuk menghubungkan database dengan mongoose
+
+Tambahkan mongodb dan mongoose ke package.json.
+Require mongoose dan mongodb ke app
+Buat .env dan tambahkan MONGODB_URL (URL akses data mongodb atlas, value di quote)
+
+connect dengan
+mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology
+
+URL ini didapatkan dari setup mongodbatlas dan letakkan di .env
+
+Lebih baik mongoose diapit ke dalam try catch
+
+MongoDB membutuhkan Schema. Schema dipetakan ke collection dalam MongoDB (bentuk dokumen). Schema adalah building block untuk Model. Model bisa dibuat dari instance object yang disebut document.
+
+done() dijalankan ketika async process selesai setelah itu melanjutkan proses async berikutnya crud. 
+
+// require dan schema
+const mongoose = require('mongoose')
+const { Schema } = mongoose
+
+instance schema
+const personSchema = new Schema({
+  name: { type: String, required: true },
+  age: Number,
+  favoriteFoods: [String]
+})
+
+// model person menggunakan schema
+const Person = mongoose.model("Person", personSchema);
+
+Penggunaannya ini seperti Sequelize. Person sebagai model untuk action CRUD dan schema adalah field-fieldnya. Modelnya bisa lebih dari 1. Tinggal buatkan model baru seperti Person.
+
+Untuk CREATE gunakan save()
+
+const createAndSavePerson = (done) => {
+  const sofyan = new Person({name: "Sofyan Setiawan", age: 28, favoriteFoods: ["sate", "nasgor", "soto"]})
+  sofyan.save(function(err, data) => {
+    if(err) return console.log(err)
+    done(null, data); 
+  })
+};
+
+Digunakan untuk mengupdate/create instance tersebut
+
+Untuk SEEDING data banyak gunakan create()
+
+Person.create(arrayOfPeople, (err, data) => {
+    if (err) return console.log(err)
+    done(null, data);
+  })
+
+Tidak perlu dibuat instance setiap datanya. Tidak perlu dibuatkan instance karena seeding seperti di sequelize. Tidak menggunakan aturan field dari model Person secara langsung.
+
+Untuk mencari bisa multiple berdasarkan field gunakan find()
+Person.find({name: personName}, (err, data) => {
+    if (err) return console.log(err)
+    done(null, data);
+})
+
+dikembalikan dalam bentuk array of instance karena selama kriteria sesuai
+
+Untuk mencari single berdasarkan field gunakan findOne()
+Person.findOne({favoriteFoods: food}, (err, data) => {
+    if (err) return console.log(err)
+    done(null, data);
+})
+
+dikembalikan dalam bentuk object instance Person satuan
+
+Ketika menambahkan data ke MongoDB, maka akan menambahkan _id di setiap object datanya.
+Seperti findOne mengembalikan 1, tapi argumentnya tidak berupa object karena field nya tidak ditransmisikan
+
+UNTUK MENCARI DAN UPDATE DATA:
+const foodToAdd = "hamburger";
+Person.findById(personId, (err, data) => {
+    if (err) return console.log(err)
+    data.favoriteFoods.push(foodToAdd)
+    data.save((err, updatedPerson) => {
+        if (err) return console.log(err)
+        done(null, updatedPerson);
+    })
+})
+
+Instance dari findById sudah terdapat method save dsb jadi bisa langsung dipakai
+
+Alternatifnya, bisa gunakan cara singkat findAndUpdate()
+findOneAndUpdate uses ( conditions , update , options , callback )
+findByIdAndRemove uses ( id, callback )
+
+Untuk remove:
+Person.remove({name: nameToRemove}, (err, data) => {
+    if (err) return console.log(err)
+    done(null, data);
+})
+
+CHAINING:
+  Person.find({favoriteFoods:foodToSearch})
+    .sort({name: 'ascending'})
+    .limit(2)
+    .select('-age')
+    .exec((err,data)=>{
+      if(err){
+        done(err);
+      } else {
+        done(null, data);
+      }
+    });
+
+------------------------------
+
+cari:
+process.env.DISABLE_XORIGIN
+process.env.XORIGIN_RESTRICT
+mongoose.connection.readyState
+req.method
+.exec()

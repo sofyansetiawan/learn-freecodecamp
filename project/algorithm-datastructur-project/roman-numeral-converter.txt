@@ -1,0 +1,34 @@
+function convertToRoman(num) {
+ let roman = [
+   {num: 1, symbol: "I"},
+   {num: 2, symbol: "II"},
+   {num: 3, symbol: "III"},
+   {num: 4, symbol: "IV"},
+   {num: 5, symbol: "V"},
+   {num: 6, symbol: "VI"},
+   {num: 7, symbol: "VII"},
+   {num: 8, symbol: "VIII"},
+   {num: 9, symbol: "IX"},
+   {num: 10, symbol: "X"},
+   {num: 40, symbol: "XL"},
+   {num: 50, symbol: "L"},
+   {num: 90, symbol: "XC"},
+   {num: 100, symbol: "C"},
+   {num: 400, symbol: "CD"},
+   {num: 500, symbol: "D"},
+   {num: 900, symbol: "CM"},
+   {num: 1000, symbol: "M"},
+ ]
+
+  let result = '';
+  for(let i = roman.length-1; i >= 0; i--){
+    while(num >= roman[i].num){
+      num -= roman[i].num;
+      result += roman[i].symbol
+      // console.log(result, num)
+    }
+  }
+  return result
+}
+
+convertToRoman(501);

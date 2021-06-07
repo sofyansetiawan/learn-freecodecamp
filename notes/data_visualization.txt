@@ -1,0 +1,15 @@
+select() untuk seleksi element pertama yang ditemukan menjadi node d3 (single)
+
+append() untuk menambahkan element ke komponen yang terselect
+
+text() untuk mengisi text ke chaining sebelumnya
+
+method-method di d3 bisa di chaining
+
+selectAll untuk menseleksi semua komponen yang ditemukan ke dalam array/obj (plural)
+
+data() select variabel berisi data dipassing ke argument
+
+enter() memasukkan data ke set ke chaining method berikutnya, jika tidak datanya tidak bisa diimplementasikan. 
+
+selectAll sebelum data dan enter, harus append element tersebut. Efek dari dari ini maka append sebanyaknya data

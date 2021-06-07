@@ -1,0 +1,68 @@
+function filterNumber(str){
+  return str.split("")
+    .filter(num => (num != " " && num != "-" && num != "(" && num != ")"))
+    .every(num => typeof num === "number")
+}
+
+function checkBracket(str){
+  let status = 0;
+  let t1 = str.indexOf("(")
+  let t2 = str.indexOf(")")
+  if(t1 != -1) status += 1
+  if(t2 != -1) status += 1
+  if(t2 < t1 || (t1 == 0 && t2 == str.length-1)) return false
+  if(status == 2) return true
+  else return false
+}
+
+function checkStrip(str){
+  let status = 0;
+  for(let i = 0; i < str.length; i++){
+    if(str[i] === '-' && i > 1){
+      if((!isNaN(str[i-1]) && !isNaN(str[i-2]) && !isNaN(str[i-3]) || (str[i-1] === ")" && str[i-4] === "("))){
+        status += 1
+      }
+    }
+    if(str[i] === ' ' && i > 1){
+      if((!isNaN(str[i-1]) && !isNaN(str[i-2]) && !isNaN(str[i-3])) || (str[i-1] === ")" && str[i-4] === "(")){
+        status += 1
+      }
+    }
+  }
+  if(status == 0){
+    return false
+  }
+  return true
+}
+
+function telephoneCheck(str) {
+  // let valid = true
+  
+  // if(((str[0] == '1' && str[1]== ' ') || str[0] == "(")
+  //     || filterNumber(str)
+  // ) valid = true
+
+  // if(!checkBracket(str)) valid = false
+
+  // if(!checkStrip(str)) valid = false
+
+  // if(filterNumber(str)){
+  //   if(str.length != 10) valid = false
+  //   if (str.length == 11){
+  //     if(str[0] != "1") valid = false
+  //   }
+  // }
+
+  // return valid
+  let pattern1 = /^(1\s?)?\d{3}([-\s]?)\d{3}\2\d{4}$/,
+        pattern2 = /^(1\s?)?\(\d{3}\)\s?\d{3}[-\s]?\d{4}$/;
+
+    if (pattern1.test(str)) {
+        return true;
+    }
+    else {
+        return pattern2.test(str) ? true : false
+    }
+}
+
+telephoneCheck("5555555555");

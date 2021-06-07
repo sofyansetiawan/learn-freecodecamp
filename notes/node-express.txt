@@ -1,0 +1,91 @@
+app umumnya dipisahkan dengan server.js
+
+server umumnya lebih ke cors allowed origin, app direquire ke server dan listen
+
+app.listen menempatkan server dalam state berjalan dan menjalankan di port untuk input dan output (ini method utama)
+
+Struktur method app `app.METHOD(PATH, HANDLER)`
+Method = http method, Path = relative path terhadap address dan port server - bisa string atau regex, Handler = badan function yang dijalankan kalau route sesuai harus punya 2 parameter (sifat callback) : req (request object client) dan res (response server object)
+
+res.send() mengirim string, object, json, tag html, dsb ke client
+
+res.sendfile(pathfile) untuk mengirim file ke client. Mengirimkan header, membaca file sesuai jenisnya dan mengirimkan ke client. Gunakan __dirname untuk mendapatkan path yang absolute (kalau tidak akan membaca path dalam dir tersebut)
+
+Jika menambahkan endpoint coba perhatikan urutan, karena bisa semacan teroverride dan static endpoint lebih dari dynamic
+
+Static file css, image, image ditempatkan di folder asset. Implementasi static file di express pakai express.static(path). Path = absolute path folder asset. Gunakan middleware = fungsi untuk intercept sambil modify info atau mengarahkan ke path lain. Argument 1 dari middleware opsional. jika arg 1 tidak ada maka langsung jalankan middleware.
+
+Middlware express.static dipasang di app.use. Langsung bisa gunakan path relative ke asset untuk view nya.
+
+API REST (REpresentational State Transfer) memungkinkan pertukaran data dengan cara yang sederhana, tanpa perlu klien mengetahui detail apa pun tentang server. Klien hanya perlu tahu di mana sumber daya (URL), dan tindakan yang ingin dilakukan (kata kerja). 
+
+Kata kerja GET digunakan saat Anda mengambil beberapa informasi, tanpa mengubah apa pun. 
+
+Saat ini, format data yang disukai untuk memindahkan informasi di seluruh web adalah JSON. JSON adalah cara mudah untuk merepresentasikan objek JavaScript sebagai string, sehingga dapat dengan mudah ditransmisikan.
+
+Gunakan res.json() dengan argument object yang bisa berisi key biasa atau array of object. Key dari JSON harus string doublequoted
+
+.env file untuk media constant variabel environment yang bisa dipakai  aplikasi sebagai setting .env harusnya bersifat rahasia, hanya kamu yang akses dan punya. File .env umumnya di root.
+
+Digunakan untuk untuk menyimpan secret key dari 3rd party, database access atau konfigurasi yang bisa mengubah perilaku aplikasi tanpa merombak/tulis ulang kode.
+
+Variabel env bisa diakses dengan process.env.namavariabel. Process.env berupa object. Umumnya nama variabel UPPERCASE. Aturan penulisan menggunakan format shell.
+
+Middleware 3 param (req, res, next) . Next = untuk melanjutkan ke stack function berikutnya misal ketika endpoint ada berisi argument lain di app.use(middlewareFunc) atau ketika app.get(path, middlewareFunc, funcLain)
+
+    cari:
+    req.method
+    req.path
+    req.ip
+
+Chain middleware ketika digunakan untuk endpoint. app.METHOD(path, middlewareFunc, funcLain). Ini berguna untuk membagi operasi ke unit kecil misal untuk validasi, manipulasi data request, memblok eksekusi dengan condition tertentu sebelum masuk ke function berikutnya.
+
+Jika ingin mengirim data baru dari request manfaatkan sifat object. Req ditambahi baru atau ubah properti.
+
+req.params object yang dikirim dari client ke server. Salah satu cara.Properti URL bisa ditangkap oleh req.params ditandai dengan titik 2 : ditangkap oleh get. Req.param dihasilkan URL path yang absolute
+
+route_path: '/user/:userId/book/:bookId'
+actual_request_URL: '/user/546/book/6754'
+req.params: {userId: '546', bookId: '6754'}
+
+setiap input form dari user menjadi properti  arams
+
+req.query object yang dikirim dari client ke server menggunakan query dihasilkan URL path yang dynamis. String query mulai ? . Variabel query pair key=value dan dipisah & . Untuk karakter lain menggunakan kode format lain. Query bisa dihasilkan dengan URL browser GET atau dikirim form pakai method GET
+
+route_path: '/library'
+actual_request_URL: '/library?userId=546&bookId=6754'
+req.query: {userId: '546', bookId: '6754'}
+
+Body parser digunakan
+POST method untuk mengirim data dari form HTML (sifat tersembunyi tidak tampil di URL, biasanya untuk data formulir dan file). POST mengirim body berisi data permintaan HTTP disebut payload. 
+
+POST /path/subpath HTTP/1.0
+From: john@example.com
+User-Agent: someBrowser/1.0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 20
+
+name=John+Doe&age=25
+
+Format basicnya adalah string query. Kalau di ajax bisa JSON untuk data kompleks dan ada multipart form data untuk data biner. Kita gunakan urlencoded body. diurai pakai body parser. Install body parser lalu pakai middlewarenya ke app.use -> bodyParser.urlencoded({extended: false})
+Middleware body parser selalu sebelum routing. 
+
+extended=false untuk pengkodean klasik. Jadi datanya ditampung dalam string atau array. Untuk true lebih fleksibel datanya bisa berdimensi. Tapi lebih baik gunakan JSON.
+
+POST method ketika client mengirim POST melalui form. Bentuk data nya berupa query string. Membutuhkan body parser dan untuk mendapatkan data melalui req.body
+
+route: POST '/library'
+urlencoded_body: userId=546&bookId=6754
+req.body: {userId: '546', bookId: '6754'}
+
+Method lain:
+
+POST (terkadang PUT) - informasi dari user yang dikirim dengan request (creat)
+
+GET - mendapatkan resource endpoint tanpa mengubah (read)
+
+PUT atau PATCH (terkadang POST) - Perbarui data yang dikirim yang sudah ada di database (update)
+
+DELETE - Menghapus data di database
+
+Method selain GET bisa memiliki payload (data di request body)

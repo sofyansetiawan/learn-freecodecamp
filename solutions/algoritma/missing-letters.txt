@@ -1,0 +1,16 @@
+function fearNotLetter(str) {
+  let result;
+  let alphabets = 'abcdefghijklmnopqrstuvwxyz'
+  let start = alphabets.indexOf(str[0])
+  let counter = 0;
+  for(let i = start, counter = 0; i < alphabets.length; i++, counter++){
+    console.log(str[counter], alphabets[i], start)
+    if(str[counter] !== alphabets[i] ){
+      result = alphabets[i]
+      break;
+    }
+  }
+  return result;
+}
+
+fearNotLetter("stvwx");

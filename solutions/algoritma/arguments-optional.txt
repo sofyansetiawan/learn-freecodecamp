@@ -1,0 +1,22 @@
+function addTogether(arg) {
+  if(arguments.length == 2){
+    let first = arguments[0];
+    let second = arguments[1];
+    if(Array.isArray(second) || (typeof second === 'string')) return undefined
+    if(typeof second != "number") return 
+    return first + second
+  }
+  else if(arguments.length == 1){
+    if(Array.isArray(arg) || (typeof arg === 'string')) return undefined
+    if(typeof arg != "number") return false
+
+    function addSecond(second){
+      if(Array.isArray(second) || (typeof second === 'string')) return undefined
+      if(typeof second != "number") return false
+      return arg + second
+    }
+    return addSecond;
+  }
+}
+
+addTogether(5)(7);
